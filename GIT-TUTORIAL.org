@@ -1,0 +1,92 @@
+* Git tutorial
+
+This tutorial will explain the minimal set of Git command needed to play together on [[root-me.org]] exercices.
+
+To simplify the use of Git, please copy the Git configuration below in =$HOME/.gitconfig=. Copy-paste stupidly, but I could explain the content orally later:
+
+#+BEGIN_SRC gitconfig
+  [user]
+    name = <your-name>
+    email = <your-email>
+
+  [color]
+    status = true
+    branch = true
+    diff = true
+    interactive = true
+
+  [log]
+    abbrevCommit = true
+    decorate = true
+    date = relative
+
+  [diff]
+    algorithm = patience
+    compactionHeuristic = true
+
+  [merge]
+    ff = false
+
+  [alias]
+    update = "! git fetch --all --tags --prune"
+
+  [push]
+    default = current
+
+  [pull]
+    rebase = true
+
+  [rebase]
+    autoStash = true
+#+END_SRC
+
+Don't forget to change =<your-name>= by your name and =<your-email>= by… I will let you guess.
+
+** Git vocabulary
+
+- a repository: a directory managed with Git
+- the origin repository: the repository cloned to create your own local repository
+- a commit: a set of modifications, signed by the author, dated and commented
+- the stage area: where modifications are virtually store to prepare the next commit
+
+** Use cases
+*** I want to copy a distant repository locally
+
+If you have this files on your local machine, may you already did it. If not, copy the URL of this distant repository, then run in a terminal =git clone <url>=, where =<url>= should be the Git repository URL. For example, the URL of this repository is =https://github.com/lepieru/root-me-exercices=, so =git clone https://github.com/lepieru/root-me-exercices= will clone this repository on your local machine.
+
+Note the cloned repository became the origin repository (you will see why this is important next).
+
+*** I want to commit my changes
+
+You may already write some changes in your local repository. To add them, you can =git add <file>=.
+
+After that, you have "staged" some modifications. It means that you push some modifications in the stage area to prepare your next commit. You still have to =git commit -m <message>= to create a new commit locally, where =<message>= is the message you want to associate with the commit.
+
+Do no forget: this commit exists just on your machine for now.
+
+*** I made one or more commits, now I want to share it
+
+You already create a commit, but it's time to share them. To do so, just run =git push= to push your commit to the origin.
+
+*** Mates made commits too, now I want to retrieve it
+
+In this case, just run =git pull= to pull in modifications from your mates who already push to the origin.
+
+** Conclusion
+
+*** Recap
+
+- to copy repository locally: =git clone <url>=
+- to create a commit: first =git add <file>=, then =git commit -m <message>=
+- to share modifications: =git push=
+- to retreive modifications: =git pull=
+
+*** Moreover you can…
+
+- show the current Git status of your local copy: =git status=
+- show all the differences between the last commit and your local copy: =git diff=
+- list commits as a log: =git log=
+
+For any question, don't forget =man git-<command>=.
+
+That's all for today folks!
