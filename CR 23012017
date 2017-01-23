@@ -1,4 +1,31 @@
 notes réunion du 23/01/2017
 
-Stégano :
-https://www.root-me.org/fr/Challenges/Steganographie/Gunnm
+
+Stégo no
+https://www.root-me.org/fr/Challenges/Steganographie/
+
+
+Challenge 1 :
+On télécharge une image au format png.
+On voit avec nos yeux, un mot de passe “cacher” dans une zone de l’image où la lecture s’avère difficile dû à la texture.
+Est-ce qu’un logiciel aurait pu le trouver  en automatique ?
+
+
+Challenge 2 :
+On télécharge une image au format jpg.
+Nous avons d’abord constaté une anomalie  dans l’image, qui nous a poussé à inspecter le fichier avec un éditeur de texte.
+
+Une autre solution utilise :
+strings ch1.png
+
+utilitaire d’affichage :
+cat
+od ou xxd
+
+Challenge 3 :
+On télécharge un fichier son au format wav.
+À l'écoute on entend une parole accélérée.
+Il nous faut trouver un logiciel de manipulation de son.
+
+Homework : liste des formats de fichiers : texte, image et son
+et corollairement, lister des logiciels de manipulation de ces format.
