@@ -1,3 +1,0 @@
-* Root me exercices
-
-This repository is a listing of some [[https://root-me.org]] exercices.
